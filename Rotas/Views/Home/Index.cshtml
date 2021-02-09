@@ -6,6 +6,23 @@
 <div>
     <h2>Rotas em ASP</h2>
 </div>
+
+<div>
+    <ul>
+        @foreach (string item in ViewBag.Categorias)
+        {
+          <li>
+            @Html.ActionLink(item, "MostrarCategoria", "Home", new
+            {
+                @categoria = item
+            }, null)
+
+        </li>
+        }
+    </ul>
+</div>
+
+
 <div>
     <ul>
          @foreach (var item in Model)
@@ -24,4 +41,10 @@
          }
     </ul>
 </div>
+
+<div>
+    @Html.ActionLink("Todas as notícias","Todas as notíciais", "Home")
+</div>
+
+
 
