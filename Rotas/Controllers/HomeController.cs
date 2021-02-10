@@ -24,6 +24,13 @@ namespace Rotas.Controllers
             return View(ultimasNoticias);
         }
 
+        public ActionResult MostrarCategoria(string categoria)
+        {
+
+            ViewBag.Categoria = categoria;
+            return View(noticias.Where(x => x.Categoria.Equals(categoria.ToLower())).FirstOrDefault());
+        }
+
         public ActionResult TodasAsNoticias()
         {
             return View(noticias);
