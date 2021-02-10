@@ -24,6 +24,20 @@ namespace Rotas.Controllers
             return View(ultimasNoticias);
         }
 
+        public ActionResult TodasAsNoticias()
+        {
+            return View(noticias);
+        }
+
+        public ActionResult MostrarNoticia(string noticiaId, string categoria, string titulo)
+        {
+            ViewBag.NoticiaId = noticiaId;
+            ViewBag.Categoria = categoria;
+            ViewBag.Titulo = titulo;
+
+            return View(noticias.FirstOrDefault(x => x.NoticiaId.ToString() == noticiaId));
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

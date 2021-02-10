@@ -1,0 +1,28 @@
+﻿@model Rotas.Models.Noticia
+@{
+    ViewBag.Title = "MostrarNoticia";
+}
+
+<h2>MostrarNoticia</h2>
+<div>
+    <p> Título: @ViewBag.Titulo</p>
+    <p> Categoria: @ViewBag.Categoria</p>
+    <p> Id: @ViewBag.NoticiaId</p>
+</div>
+<div>
+    <p>
+        @Html.ActionLink("Voltar", "TodasAsNoticias", "Home")
+    </p>
+</div>
+
+<h2>Mostrar Noticia via model</h2>
+<div>
+    <p> Título: @Model.Titulo</p>
+    <p> Categoria: @Model.Categoria</p>
+    <p> Id: @Model.NoticiaId</p>
+</div>
+<div>
+    <p>
+        @Html.ActionLink("Voltar", "TodasAsNoticias", "Home")
+    </p>
+</div>
